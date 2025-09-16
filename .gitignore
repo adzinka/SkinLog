@@ -1,6 +1,7 @@
 # Gradle files
 .gradle/
 build/
+**/build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -23,6 +24,10 @@ misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
 
+# OS
+.DS_Store
+Thumbs.db
+
 # Keystore files
 *.jks
 *.keystore
@@ -32,3 +37,6 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Kotlin/Native & KMP
+.kotlin
