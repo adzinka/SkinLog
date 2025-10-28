@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.android.kotlin.multiplatform.library)
     alias(libs.plugins.android.lint)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.sqldelight)
 }
 
 kotlin {
@@ -63,6 +64,7 @@ kotlin {
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.kotlinx.serialization.json)
                 implementation(libs.kotlinx.datetime)
+                implementation(libs.sqldelight.coroutines.ext)
             }
         }
 
@@ -77,6 +79,7 @@ kotlin {
                 // Add Android-specific dependencies here. Note that this source set depends on
                 // commonMain by default and will correctly pull the Android artifacts of any KMP
                 // dependencies declared in commonMain.
+                implementation(libs.sqldelight.android.driver)
             }
         }
 
@@ -88,15 +91,23 @@ kotlin {
             }
         }
 
-        iosMain {
-            dependencies {
-                // Add iOS-specific dependencies here. This a source set created by Kotlin Gradle
-                // Plugin (KGP) that each specific iOS target (e.g., iosX64) depends on as
-                // part of KMP’s default source set hierarchy. Note that this source set depends
-                // on common by default and will correctly pull the iOS artifacts of any
-                // KMP dependencies declared in commonMain.
-            }
+//        iosMain {
+//            dependencies {
+//                // Add iOS-specific dependencies here. This a source set created by Kotlin Gradle
+//                // Plugin (KGP) that each specific iOS target (e.g., iosX64) depends on as
+//                // part of KMP’s default source set hierarchy. Note that this source set depends
+//                // on common by default and will correctly pull the iOS artifacts of any
+//                // KMP dependencies declared in commonMain.
+//            }
+//        }
+
+    }
+}
+
+sqldelight {
+    databases {
+        create("SkinDb") {
+            packageName.set("app.skinlog.db")
         }
     }
-
 }

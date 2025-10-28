@@ -1,0 +1,13 @@
+CREATE TABLE DayEntry(
+  date TEXT NOT NULL PRIMARY KEY,
+  skin_score INTEGER,
+  photo_uri TEXT,
+  notes TEXT
+);
+
+insertDayEntry:
+INSERT OR REPLACE INTO DayEntry(date, skin_score, photo_uri, notes)
+VALUES (?, ?, ?, ?);
+
+selectDayByDate:
+SELECT * FROM DayEntry WHERE date = ?;
