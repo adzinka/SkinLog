@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "SkinLog"
 include(":app")
+include(":shared")

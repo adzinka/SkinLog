@@ -20,6 +20,10 @@ serialization = "1.9.0"
 datetime = "0.7.1"
 sqldelight = "2.1.0"
 koin = "4.1.1"
+kotlinStdlib = "2.2.20"
+kotlinTest = "2.2.20"
+runner = "1.5.2"
+core = "1.5.0"
 
 [libraries]
 # AndroidX
@@ -49,6 +53,10 @@ sqldelight-android-driver  = { group = "app.cash.sqldelight", name = "android-dr
 sqldelight-coroutines-ext  = { group = "app.cash.sqldelight", name = "coroutines-extensions", version.ref = "sqldelight" }
 koin-core                  = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 koin-android               = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlinTest" }
+androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
+androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -58,3 +66,5 @@ kotlin-multiplatform= { id = "org.jetbrains.kotlin.multiplatform", version.ref =
 kotlin-serialization= { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-compose      = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 sqldelight          = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+android-lint = { id = "com.android.lint", version.ref = "agp" }
