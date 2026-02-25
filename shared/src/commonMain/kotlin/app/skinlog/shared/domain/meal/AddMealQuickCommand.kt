@@ -4,5 +4,5 @@ data class AddMealQuickCommand(
     val timestamp: Long,
     val mealType: MealType,
     val note: String?,
-    val exposures: Map<ExposureKey, Intensity>
+    val exposures: List<MealExposure>
 )
